@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'Rubocop', '~> 0.49.1'
+gem 'rubocop', '~> 0.49.1'
 gem 'simplecov', :require => false, :group => :test
 gem 'rspec', '~> 3.5.0'
 
