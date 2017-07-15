@@ -8,36 +8,56 @@
 
 Law_office = LawOffice.create(
     
-      law_office: 'Camargo and Associates',
-      contact_information: 'Office Number: 123-4567 , Address: 00 Main St, Durham, NC 27701 ', 
+      name: 'Camargo and Associates',
+      phone_number: '919-123-4567' , 
+      street_address: '00 Main St', 
+      city: 'Durham',
+      state: 'North Carolina',
+      zip: '27701',
       website_link: 'www.camargoandassociates.com'
     
 )
 
 LawOffice.create(
   
-    law_office: 'Cruzaley Law Firm', 
-    contact_information: 'Office number: , Address: 01 Main St, Durham, NC 27701', 
+    name: 'Cruzaley Law Firm', 
+    phone_number: '987-274-4732', 
+    street_address: '01 Main St',
+    city: 'Durham',
+    state: 'North Carolina', 
+    zip: '27701', 
     website_link: 'www.cruzaleylawfirm.com'
   
 )
 
 LawOffice.create(
   
-    law_office: 'Aaron Jimenez Immigration Law Office',
-    contact_information: 'Office Number: 919-123-5678 , Address: 02 Main St, Durham, NC 27701',
+    name: 'Aaron Jimenez Immigration Law Office',
+    phone_number: '919-123-5678',
+    street_address: '02 Main St',
+    city: 'Durham',
+    state: 'North Carolina',
+    zip: '27701',
     website_link: 'www.jimenezimmigration.com'
 )
 
 LawOffice.create(
   
-  law_office: 'Maldonado Immigration',
-  contact_information: 'Office Number: 919-213-3456 , Address: 03 Main St, Durham, NC 27701',
+  name: 'Maldonado Immigration',
+  phone_number: '919-213-3456', 
+  street_address: '03 Main St',
+  city: 'Durham',
+  state: 'North Carolina',
+  zip: '27701',
   website_link: 'www.maldonadoimmgration.com'
 )
 
 LawOffice.create(
-  law_office: 'Antonio Camargo Immigration', 
-  contact_information: 'Office Number: 919-758-4784 , Address: 04 Main St, Durham, NC 27701', 
+  name: 'Antonio Camargo Immigration', 
+  phone_number: '919-758-4784', 
+  street_address: '04 Main St',
+  city: 'Durham',
+  state: 'North Carolina',
+  zip: '27701', 
   website_link:'www.antonioimmigration.com'
 )
