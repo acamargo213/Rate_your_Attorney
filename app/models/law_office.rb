@@ -1,0 +1,3 @@
+class LawOffice < ApplicationRecord
+
+end
