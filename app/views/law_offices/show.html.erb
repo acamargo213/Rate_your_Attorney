@@ -1,64 +1,48 @@
-<h1>Law Office</h1>
+<div class="row">
+  <div class="col-md-5 col-md-offset-3">
+    <h1>Law Office</h1>
+    <div class="media">
+      <div class="media-left">
+        <a href="#">
+          <img class="media-object" src="https://media-cdn.tripadvisor.com/media/photo-s/0e/9a/e3/1d/freedom-tower.jpg" alt="New York City">
+        </a>
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading">
+          <%= @law_office.name %>
+        </h4>
+        <p>
+          <br>
+          Name: <%= @law_office.name %>
+            
+          <br><br>
+            
+          Phone: <%= @law_office.phone_number %>
 
+          <br><br>
 
-<!-- should we add the practice areas? -->
+          Street Address: <%= @law_office.street_address %>
 
-<!-- comment section
+          <br><br>
+          
+          City: <%= @law_office.city %>
 
-<h1>Comments</h1>
-< @comment.comment %>
-<ul class="list-group" >
-  <li class="list-group-item"><comment.comment %></li>
--->
+          <br><br>
+          
+          State: <%= @law_office.state %>
 
+          <br><br>
+            
+          Zip: <%= @law_office.zip %>
 
-<div class="media">
-  <div class="media-left media-middle">
-    <a href="#"><img class="media-object" src="https://media-cdn.tripadvisor.com/media/photo-s/0e/9a/e3/1d/freedom-tower.jpg" alt="New York City">
-    </a>
-  </div>
-  <div class="media-body">
-    <h4 class="media-heading">
-       <div class="row">
-        <div class="col-md-3 col-md-offset-3"><%= @law_office.name %></div></h4>
-        </div>
-    <p>
-        <div class="row">
-        <div class="col-md-3 col-md-offset-3"> Name: <%= @law_office.name %></div>
-        </div>
-        
-        <br>
-        
-        <div class="row">
-        <div class="col-md-3 col-md-offset-3"> Phone: <%= @law_office.phone_number %></div>
-        </div>
-       
-        <br>
-        
-        <div class="row"></div>
-        <div class="col-md-3 col-md-offset-3">Street Address: <%= @law_office.street_address %></div>
-        </div>
-        <br>
-        
-        <div class="row">
-        <div class="col-md-3 col-md-offset-3">City: <%= @law_office.city %></div>
-        </div>
-        
-        <br>
-        <div class="row">
-        <div class="col-md-3 col-md-offset-3">State: <%= @law_office.state %></div>
-        </div>
-        
-        <br>
-        <div class="row">
-        <div class="col-md-3 col-md-offset-3">Zip: <%= @law_office.zip %></div>
-        </div>
-        
-        <br>
-        <div class="row">
-        <div class="col-md-3 col-md-offset-3">Website Link: <%= @law_office.website_link %></div>
-        </div>
-    </p>
-    <!-- here will show info of the law office -->
+          <br><br>
+          
+          Website Link: <%= @law_office.website_link %>
+
+        </p>
+        <!-- here will show info of the law office -->
+      </div>
+    </div>
   </div>
 </div>
+
