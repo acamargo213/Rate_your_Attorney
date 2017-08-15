@@ -1,1 +1,10 @@
-<%= @search%>
+<p>You searched for <strong><%= @search%></strong></p>
+
+<br><br><br>
+<ul class="list-group">
+ <%@results.each do |law_office|%>
+    <li class="list-group-item"><%=law_office.name%></li>
+    
+  <% end%>
+
+</ul>

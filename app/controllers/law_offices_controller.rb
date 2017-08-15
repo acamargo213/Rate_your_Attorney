@@ -1,10 +1,16 @@
 class LawOfficesController < ApplicationController
   def index
     @search=params[:search]
+    @results= LawOffice.where("name LIKE ?","%#{@search}%").or(
+      LawOffice.where("city LIKE ?","%#{@search}%").or(
+       LawOffice.where("state LIKE ?","%#{@search}%")
+      )
+    )
     
   end
   
   def search
+    
   end
 
 
@@ -39,5 +45,4 @@ class LawOfficesController < ApplicationController
   
   def destroy
   end
-  
 end
