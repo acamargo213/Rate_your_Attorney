@@ -10,7 +10,7 @@ class LawOfficesController < ApplicationController
   end
   
   def search
-    
+  
   end
 
 
