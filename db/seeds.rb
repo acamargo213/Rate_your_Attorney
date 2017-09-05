@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Law_office = LawOffice.create(
+Law_office = LawOffice.find_or_create_by(
     
       name: 'Camargo and Associates',
       phone_number: '919-123-4567' , 
@@ -18,7 +18,7 @@ Law_office = LawOffice.create(
     
 )
 
-LawOffice.create(
+LawOffice.find_or_create_by(
   
     name: 'Cruzaley Law Firm', 
     phone_number: '987-274-4732', 
@@ -30,7 +30,7 @@ LawOffice.create(
   
 )
 
-LawOffice.create(
+LawOffice.find_or_create_by(
   
     name: 'Aaron Jimenez Immigration Law Office',
     phone_number: '919-123-5678',
@@ -41,7 +41,7 @@ LawOffice.create(
     website_link: 'www.jimenezimmigration.com'
 )
 
-LawOffice.create(
+LawOffice.find_or_create_by(
   
   name: 'Maldonado Immigration',
   phone_number: '919-213-3456', 
@@ -52,7 +52,7 @@ LawOffice.create(
   website_link: 'www.maldonadoimmgration.com'
 )
 
-LawOffice.create(
+LawOffice.find_or_create_by(
   name: 'Antonio Camargo Immigration', 
   phone_number: '919-758-4784', 
   street_address: '04 Main St',
@@ -61,3 +61,21 @@ LawOffice.create(
   zip: '27701', 
   website_link:'www.antonioimmigration.com'
 )
+
+
+
+
+
+Rating.find_or_create_by(
+  law_office: LawOffice.find_by( name: 'Maldonado Immigration'),
+  stars: 3,
+  comments: "it was nice"
+  
+)
+
+
+
+
+
+
+
