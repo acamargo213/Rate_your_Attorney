@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170702021929) do
+ActiveRecord::Schema.define(version: 20170905212331) do
 
   create_table "attorneys", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -35,8 +35,11 @@ ActiveRecord::Schema.define(version: 20170702021929) do
   end
 
   create_table "ratings", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.text     "comments"
+    t.integer  "stars"
+    t.integer  "law_office_id"
   end
 
   create_table "services", force: :cascade do |t|
