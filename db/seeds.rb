@@ -67,15 +67,43 @@ LawOffice.find_or_create_by(
 
 
 Rating.find_or_create_by(
-  law_office: LawOffice.find_by( name: 'Maldonado Immigration'),
+  law_office: LawOffice.find_by( name: 'Maldonado Immigration' ),
   stars: 3,
   comments: "it was nice"
-  
 )
 
+Rating.find_or_create_by(
+  law_office: LawOffice.find_by( name: 'Camargo and Associates' ),
+  stars: 1,
+  comments: "Bad service, they did not return my calls."
+)
 
+Rating.find_or_create_by(
+  law_office: LawOffice.find_by( name: 'Cruzaley Law Firm' ),
+  stars: 4,
+  comments: "The firm was very helpful. Awesome service!"
+)
 
+Rating.find_or_create_by(
+  law_office: LawOffice.find_by( name: 'Cruzaley Law Firm' ),
+  stars: 5,
+  comments: "They are nice people, offer great services."
+)
 
+Rating.find_or_create_by(
+  law_office: LawOffice.find_by( name: 'Cruzaley Law Firm' ),
+  stars: 4.5,
+  comments: "Cruzaley Law Firm was really helpful and made sure I was well represented."
+)
 
+Rating.find_or_create_by(
+  law_office: LawOffice.find_by( name: 'Aaron Jimenez Immigration Law Office' ),
+  stars: 2.5,
+  comments: "There were very few rude people, but at least overall had helpful services."
+)
 
-
+Rating.find_or_create_by(
+  law_office: LawOffice.find_by( name: 'Antonio Camargo Immigration' ),
+  stars: 3,
+  comments: "Nice people, offered me coffee. It was like I was welcomed."
+)
