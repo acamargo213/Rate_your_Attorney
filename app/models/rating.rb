@@ -1,3 +1,4 @@
 class Rating < ApplicationRecord
  ## has_many:comment
-end
+ belongs_to :law_office
+end 

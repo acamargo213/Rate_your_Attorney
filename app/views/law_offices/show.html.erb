@@ -38,7 +38,7 @@
           <br><br>
           
           Website Link: <%= @law_office.website_link %>
-
+  
         </p>
         <!-- here will show info of the law office -->
       </div>
@@ -46,3 +46,16 @@
   </div>
 </div>
 
+
+
+
+<% ratings= @law_office.ratings %>
+<%ratings.each do |rating| %>
+   <%= rating.comments %>
+    <% rating.stars.times do %>
+       <span class="glyphicon glyphicon-star" aria-hidden= "true"></span>
+       <% end %>
+    <% (5 - rating.stars).times do %>
+       <span class= "glyphicon glyphicon-star-empty" aria-hidden= "true"></span>
+       <% end %>
+<% end %>
