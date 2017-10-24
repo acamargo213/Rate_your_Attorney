@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-md-5 col-md-offset-3">
+  <div class="col-md-7 col-md-offset-3">
     <h1>Law Office</h1>
     <div class="media">
       <div class="media-left">
@@ -43,19 +43,46 @@
         <!-- here will show info of the law office -->
       </div>
     </div>
+    <% ratings= @law_office.ratings %>
+      <div class="comments">
+        <%ratings.each do |rating| %>
+           <div>
+             <%= rating.comments %>
+             <% rating.stars.times do %>
+               <span class="glyphicon glyphicon-star" aria-hidden= "true"></span>
+             <% end %>
+             <% (5 - rating.stars).times do %>
+               <span class= "glyphicon glyphicon-star-empty" aria-hidden= "true"></span>
+             <% end %>
+           </div>
+        <% end %>
+      </div>
+
+    
   </div>
 </div>
 
 
 
 
-<% ratings= @law_office.ratings %>
-<%ratings.each do |rating| %>
-   <%= rating.comments %>
-    <% rating.stars.times do %>
-       <span class="glyphicon glyphicon-star" aria-hidden= "true"></span>
-       <% end %>
-    <% (5 - rating.stars).times do %>
-       <span class= "glyphicon glyphicon-star-empty" aria-hidden= "true"></span>
-       <% end %>
+<%= form_for @rating, url: ratings_path do |f| %>
+<%= f.hidden_field :law_office_id, value: @law_office.id %>
+  <div class="form_group">
+    <%= f.text_field :comments, placeholder: 'Comments', class: 'form-control' %>
+  </div>
+  <div class="form_group">
+    <%= f.text_field :stars, placeholder: 'Stars', class: 'form-control' %>
+  </div>
+   <%= f.submit 'Create' %>
 <% end %>
+  
+  
+
+
+
+  
+  
+  
+  
+  
+  

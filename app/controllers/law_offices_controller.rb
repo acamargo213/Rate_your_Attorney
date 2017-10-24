@@ -16,6 +16,7 @@ class LawOfficesController < ApplicationController
 
   def new
     @law_office = LawOffice.new
+    @rating = Rating.new
   end
 
   def create
@@ -41,6 +42,8 @@ class LawOfficesController < ApplicationController
 
   def show
     @law_office = LawOffice.find(params[:id])
+    @rating = Rating.new
+    
   end
 
   def destroy

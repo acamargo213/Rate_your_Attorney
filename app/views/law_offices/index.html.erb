@@ -3,11 +3,14 @@
 <ul class="list-group">
 <%@results.each do |law_office|%>
     <li class="list-group-item">
-      <%=highlight(law_office.name,@search)%>
-        <br><%=highlight(law_office.street_address,@search)%>, <%=highlight(law_office.zip,@search)%>
+     <%= link_to law_office.name, law_office %>
+        <br><%=highlight(law_office.street_address,@search)%>, <%=highlight(law_office.zip,@search)%></br>
         <br><%= highlight(law_office.city,@search)%>, <%=highlight(law_office.state,@search)%></br>
+  
     </li>
     
   <% end%>
 
 </ul>
+
+

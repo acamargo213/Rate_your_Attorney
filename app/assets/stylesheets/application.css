@@ -4,9 +4,16 @@ mark{
 }
 
 img {
-  height: 64px;
+  height: 250px;
   width: auto;
 }
+
+.comments { 
+  margin-top: 30px;
+  padding-top: 100px;
+  
+}
+  
 
 
 
