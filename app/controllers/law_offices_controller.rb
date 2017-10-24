@@ -6,11 +6,11 @@ class LawOfficesController < ApplicationController
        LawOffice.where("state LIKE ?","%#{@search}%")
       )
     )
-    
+
   end
-  
+
   def search
-  
+
   end
 
 
@@ -18,7 +18,7 @@ class LawOfficesController < ApplicationController
     @law_office = LawOffice.new
     @rating = Rating.new
   end
-  
+
   def create
     @law_office = LawOffice.new
     @law_office.name = params[:law_office][:name]
@@ -29,23 +29,23 @@ class LawOfficesController < ApplicationController
     @law_office.zip = params[:law_office][:zip]
     @law_office.website_link = params[:law_office][:website_link]
     @law_office.save
-    
+
     redirect_to '/'
   end
-  
+
   def edit
     @law_office = LawOffice.find(params[:id])
   end
-  
+
   def update
   end
-  
+
   def show
     @law_office = LawOffice.find(params[:id])
     @rating = Rating.new
     
   end
-  
+
   def destroy
   end
 end
