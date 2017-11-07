@@ -14,3 +14,27 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+
+$(document).ready(function() {
+  var $ratingSection = $('div.star-rating');
+  $ratingSection.on('click', 'span[data-stars]', function(event) {
+    var $clickedStarSpan = $(event.currentTarget);
+    var ratedStars = $clickedStarSpan.data('stars');
+    console.log(ratedStars);
+    $ratingSection.find('input[type="hidden"]').val(ratedStars);
+    var $allStars = $ratingSection.find('span[data-stars]')
+    $allStars.removeClass('selected');
+    $allStars.each(function(index, element) {
+      var $starSpan = $(element);
+      if ($starSpan.data('stars') <= ratedStars) {
+        $starSpan.addClass('selected');
+      }
+    });
+  });
+});
+
+
+
+

@@ -8,12 +8,37 @@ img {
   width: auto;
 }
 
-.comments { 
+.comments{ 
   margin-top: 30px;
   padding-top: 100px;
+
+}
+
+h3 {
+  float: right;
+}
+
+.star-rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  display: inline-block;
+  
   
 }
-  
+.star-rating > span:hover:before,
+.star-rating > span:hover ~ span:before,
+.star-rating > span.selected:before
+{
+   content: "\2605";
+   position: absolute;
+   cursor: pointer;
+   color: yellow;
+}
+
+.stars{
+  float: right;
+}
+
 
 
 
