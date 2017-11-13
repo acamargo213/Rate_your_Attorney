@@ -43,7 +43,12 @@ class LawOfficesController < ApplicationController
   def show
     @law_office = LawOffice.find(params[:id])
     @rating = Rating.new
-    
+    @ratings = @law_office.ratings
+     if @ratings.blank?
+       @avg_rating = 0
+     else
+       @avg_rating = @ratings.average(:stars).round(1)
+     end
   end
 
   def destroy
