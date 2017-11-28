@@ -1,17 +1,28 @@
-<p>You searched for <strong><%= @search%></strong></p>
+
 <br><br><br>
 <ul class="list-group">
-<%@results.each do |law_office|%>
-    <li class="list-group-item">
-     <%= link_to law_office.name, law_office %>
-        <br><%=highlight(law_office.street_address,@search)%>, <%=highlight(law_office.zip,@search)%></br>
-        <br><%= highlight(law_office.city,@search)%>, <%=highlight(law_office.state,@search)%></br>
+    <% @results.each do |law_office| %>
+        <div class="average_rating-<% %>" data-score= <%= law_office.ratings.average(:stars).round(1) %>></div>
+        
+    
+        <li class="list-group-item">
+            <%= link_to law_office.name, law_office %>
+            <%= law_office.ratings.average(:stars).round(1) %>
+            <br><%= highlight(law_office.street_address, @search) %>, <%= highlight(law_office.zip, @search) %></br>
+            <%= highlight(law_office.city, @search) %>, <%= highlight(law_office.state, @search) %>
+            
+             
        
-    </li>
+        </li>
+        
     
+    <% end %>
     
-  <% end%>
+     <a class="btn btn-primary" href="law_offices/new" role="button">Create New Law Office</a>
+    
 
 </ul>
-
-
+<% if (@results.empty?) %>
+    <p>No search results</p>
+    <a class="btn btn-primary" href="law_offices/new" role="button">Create New Law Office</a>
+<% end %>

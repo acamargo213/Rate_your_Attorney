@@ -40,6 +40,35 @@ h3 {
 }
 
 
+.list-group-item{
+  border:none;
+}
+
+/* for showing ratings with partial stars */
+.star-rating-show {
+  position: relative;
+  display: inline-block;
+}
+.star-rating-show .full {
+  display: inline-block;
+  color: orange;
+  overflow: hidden;
+  white-space: nowrap;
+  position: absolute;
+  top: 0;
+}
+.star-rating-show .remaining {
+  color: orange;
+}
+.star-rating-show .remaining span {
+  display: inline-block;
+  width: 1em;
+  max-width: 1em;
+}
+
+.stars{
+  color: orange;
+}
 
 
 
