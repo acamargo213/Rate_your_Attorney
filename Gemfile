@@ -11,6 +11,10 @@ gem 'rspec', '~> 3.5.0'
 
 gem 'devise'
 
+gem "letter_opener", :group => :development
+
+gem 'pry-nav'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.2'
 # Use sqlite3 as the database for Active Record
@@ -56,3 +60,8 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'bcrypt', platforms: :ruby
+
+## gem for local server or command line
+
