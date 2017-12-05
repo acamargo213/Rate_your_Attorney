@@ -11,8 +11,8 @@ class LawOfficesController < ApplicationController
            )
         )
       )
-    @results.uniq!
     )
+    @results.uniq!
   end
 
   def search
