@@ -1,12 +1,18 @@
 class LawOfficesController < ApplicationController
   def index
-    @search=params[:search]
-    @results= LawOffice.where("name LIKE ?","%#{@search}%").or(
-      LawOffice.where("city LIKE ?","%#{@search}%").or(
-       LawOffice.where("state LIKE ?","%#{@search}%")
+    @search = params[:search]
+    @tokens = @search.split
+    @results = [ ]
+    @tokens.each do |token|
+      @results += LawOffice.where("name LIKE ?","%#{token}%").or(
+        LawOffice.where("city LIKE ?","%#{token}%").or(
+         LawOffice.where("state LIKE ?","%#{token}%").or(
+           LawOffice.where("zip LIKE ?","%#{token}%")
+           )
+        )
       )
     )
-
+    @results.uniq!
   end
 
   def search

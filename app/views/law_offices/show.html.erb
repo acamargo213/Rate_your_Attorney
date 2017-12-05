@@ -44,7 +44,11 @@
         <!-- here will show info of the law office -->
       </div>
     </div>
-    <h3><%=@law_office.ratings.count %> Ratings/Average Rating: <%= @avg_rating %></h3>
+    <h3>
+      <%=@law_office.ratings.count %> Ratings/Average Rating: <%= @avg_rating %>
+      <%= render(partial: 'ratings/show_stars', locals: { rating: @avg_rating }) %>
+    </h3>
+  
     <h2>Comments</h2>
    
       
