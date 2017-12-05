@@ -4,10 +4,71 @@ mark{
 }
 
 img {
-  height: 64px;
+  height: 250px;
   width: auto;
 }
 
+.comments{ 
+  margin-top: 30px;
+  padding-top: 100px;
+
+}
+
+h3 {
+  float: right;
+}
+
+.star-rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  display: inline-block;
+  
+  
+}
+.star-rating > span:hover:before,
+.star-rating > span:hover ~ span:before,
+.star-rating > span.selected:before
+{
+   content: "\2605";
+   position: absolute;
+   cursor: pointer;
+   color: yellow;
+}
+
+.stars{
+  float: right;
+}
+
+
+.list-group-item{
+  border:none;
+}
+
+/* for showing ratings with partial stars */
+.star-rating-show {
+  position: relative;
+  display: inline-block;
+}
+.star-rating-show .full {
+  display: inline-block;
+  color: orange;
+  overflow: hidden;
+  white-space: nowrap;
+  position: absolute;
+  top: 0;
+}
+.star-rating-show .remaining {
+  color: orange;
+}
+.star-rating-show .remaining span {
+  display: inline-block;
+  width: 1em;
+  max-width: 1em;
+}
+
+.stars{
+  color: orange;
+}
 
 
 
