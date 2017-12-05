@@ -11,7 +11,7 @@ class LawOfficesController < ApplicationController
            )
         )
       )
-    )
+    end
     @results.uniq!
   end
 
