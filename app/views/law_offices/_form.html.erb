@@ -1,4 +1,9 @@
 <%= form_for @law_office do |f| %>
+
+  <%= if user_not_logged_in?
+      link_to '/devise/sessions/new.html.erb' 
+      else link_to '/law_office/' %>
+
   <div class="form_group">
     <%= f.text_field :name, placeholder: 'Name', class: 'form-control' %>
   </div>
