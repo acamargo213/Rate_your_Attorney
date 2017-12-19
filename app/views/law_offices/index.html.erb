@@ -1,27 +1,25 @@
-
-<br><br><br>
+<html>    
+    <%= form_tag('/law_offices', method: :get) do %>
+        <h1 style= "font-size:49px; margin-top:60px";"padding-bottom:60px";></h1>
+    <%= text_field_tag :search, nil, size:50, placeholder: "Enter Law Office name, city, or state" %>
+        <input type= "submit" value= "Go"/>
+    <% end %>
+</html>
+<br><br>
 <ul class="list-group">
     <% @results.each do |law_office| %>
         <div class="average_rating-<% %>" data-score= <%= law_office.ratings.average(:stars).round(1) %>></div>
         
-    
+        <% average= law_office.ratings.average(:stars).round(1) %>
         <li class="list-group-item">
             <%= link_to law_office.name, law_office %>
-            <%= law_office.ratings.average(:stars).round(1) %>
+            <br><%= render(partial: 'ratings/show_stars', locals: { rating: average }) %>
             <br><%= highlight(law_office.street_address, @search) %>, <%= highlight(law_office.zip, @search) %></br>
             <%= highlight(law_office.city, @search) %>, <%= highlight(law_office.state, @search) %>
-            
-             
-       
         </li>
-        
-    
     <% end %>
-    
+    <% if (@results.empty?) %>
+       <p>No search results</p>
+    <% end %>
      <a class="btn btn-primary" href="law_offices/new" role="button">Create New Law Office</a>
-    
-
 </ul>
-<% if (@results.empty?) %>
-    <p>No search results</p>
-<% end %>
