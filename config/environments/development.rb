@@ -55,4 +55,7 @@ Rails.application.configure do
   
  ## At this point, a number of instructions will appear in the console. Among these instructions, you'll need to set up the default URL options for the Devise mailer in each environment. Here is a possible configuration for 
 config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-end
+
+# letter opener gem
+  config.action_mailer.delivery_method = :letter_opener
+end 
