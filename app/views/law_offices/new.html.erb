@@ -1,8 +1,8 @@
 <h1>New Law Office</h1>
 
-<%= if user_signed_in
-	render 'form' %>
-<%= else %>
+<% if user_signed_in? %>
+	<%= render 'form' %>
+<% else %>
 	<p> Please sign in or Sign up to create law office </p>
 	<%= link_to 'Sign up', new_user_registration_path %>
 

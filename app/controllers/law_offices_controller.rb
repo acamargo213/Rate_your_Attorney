@@ -1,6 +1,6 @@
 class LawOfficesController < ApplicationController
   def index
-    @search = params[:search]
+    @search = params[:search] || ''
     @tokens = @search.split
     @results = [ ]
     @tokens.each do |token|
