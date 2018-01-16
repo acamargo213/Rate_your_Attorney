@@ -74,8 +74,34 @@ h3 {
   margin-top: 90px;
   padding-left: 20px;
 }
+.errors, .alert{
+    border: 1px solid;
+    margin: 10px 0px;
+    padding: 15px 10px 15px 50px;
+    color: #d9534f;
+    width: 500px;
+    margin: auto;
+}
 
+#error_explanation{
+  border: 1px solid;
+  padding-left: 15px;
+  color: #d9534f;
+  width:500px;
+  margin: auto;
 
+}
+
+#error_explanation h2{
+  font-size: 15px;
+}
+
+.users{
+  margin: auto;
+  padding-left: 20px;
+  margin-top: 20px;
+  width:500px;
+}
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
