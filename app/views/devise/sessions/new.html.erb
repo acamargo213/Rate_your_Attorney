@@ -1,31 +1,6 @@
 <br><br>
 <div class='center'>
 <h2>Log in</h2>
-  <style>
-    div.container {
-      position: relative;
-    }
-
-    .center{
-      position: absolute;
-      left: 0;
-      top: 20%;
-      width: 100%;
-      text-align: center;
-      font-size: 18px;
-    }
-  </style>
-
-  <style>
-  div.box {
-    width: 200px;
-    padding: 40px;
-    border: 10px solid #7a7685;
-    margin: auto;  
-    box-sizing: content-box;
-  }
-  </style>
-
    <div class="box"><%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="field">
       <%= f.label :email %><br />
