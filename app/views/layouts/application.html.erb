@@ -27,18 +27,27 @@
           </div>
           <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
-              <li class="active"><a href="#"><span class = "glyphicon glyphicon-user" aria-hidden= "true"></span></a></li>
+              <li class="active">
+                <%if user_signed_in? %>
+                  <%= link_to(destroy_user_session_path, :method => :delete) do %>
+                    <span class = "glyphicon glyphicon-user" aria-hidden= "true"></span>
+                  Logout
+                  <% end %>
+                <% end %>
+              </li>
             </ul>
             
           </div><!--/.nav-collapse -->
         </div>
       </nav>
     <div id = "main">
-      <%if params[:controller] != "devise/sessions" %>
+      <%if params[:controller] != "devise/session" %>
         <% flash.each do |name, msg| %>
           <%= content_tag :div, msg, id: "flash_#{name}",class: name if msg.is_a?(String) %>
         <% end %>
       <% end %>
+    
+    
       <%= yield %>
     </div>
   </body>
