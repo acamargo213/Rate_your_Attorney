@@ -1,9 +1,8 @@
-
 <div class="users">
-  <% flash.each do |name, msg| %>
-        <%= content_tag :div, msg, id: "flash_#{name}",class: name if msg.is_a?(String) %>
-      <% end %>
-  <h2>Log in</h2>
+  <h2>Log in 
+    <div class="col-md-2 col-md-offset-2">
+    </div>
+  </h2>
   
   <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: "form-horizontal") do |f| %>
    
