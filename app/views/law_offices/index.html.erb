@@ -18,8 +18,9 @@
     
     <% end %>
     
-     <a class="btn btn-primary" href="law_offices/new" role="button">Create New Law Office</a>
-    
+     <% if user_signed_in? %>
+        <a class="btn btn-primary" href="law_offices/new" role="button">Create New Law Office</a>
+     <% end %>
 
 </ul>
 <% if (@results.empty?) %>

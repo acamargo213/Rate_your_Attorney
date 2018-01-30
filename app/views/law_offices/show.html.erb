@@ -54,8 +54,7 @@
       
    
   
-  
-  
+
     <% ratings= @law_office.ratings %>
       <div class="comments">
         <%ratings.each do |rating| %>
@@ -72,21 +71,23 @@
            </div>
         <% end %>
       </div>
-      <%= form_for @rating, url: ratings_path do |f| %>
-        <%= f.hidden_field :law_office_id, value: @law_office.id %>
-        <%= f.label :stars, 'Rating: ' %>
-        <div class="star-rating">
-          <%= f.hidden_field :stars %>
-          <span data-stars="5">☆</span>
-          <span data-stars="4">☆</span>
-          <span data-stars="3">☆</span>
-          <span data-stars="2">☆</span>
-          <span data-stars="1">☆</span>
-        </div>
-        <div class="form_group">
-          <%= f.text_field :comments, placeholder: 'Comments', class: 'form-control' %>
-        </div>
-         <%= f.submit 'Create' %>
+      <% if user_signed_in? %>
+        <%= form_for @rating, url: ratings_path do |f| %>
+          <%= f.hidden_field :law_office_id, value: @law_office.id %>
+          <%= f.label :stars, 'Rating: ' %>
+          <div class="star-rating">
+            <%= f.hidden_field :stars %>
+            <span data-stars="5">☆</span>
+            <span data-stars="4">☆</span>
+            <span data-stars="3">☆</span>
+            <span data-stars="2">☆</span>
+            <span data-stars="1">☆</span>
+          </div>
+          <div class="form_group">
+            <%= f.text_field :comments, placeholder: 'Comments', class: 'form-control' %>
+          </div>
+           <%= f.submit 'Create' %>
+        <% end %>
       <% end %>
 
   </div>

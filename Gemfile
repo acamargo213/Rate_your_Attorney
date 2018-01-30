@@ -65,3 +65,4 @@ gem 'bcrypt', platforms: :ruby
 
 ## gem for local server or command line
 
+ gem 'wdm', '>= 0.1.0' if Gem.win_platform?

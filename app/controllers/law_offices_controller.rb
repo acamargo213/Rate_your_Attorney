@@ -1,6 +1,7 @@
 class LawOfficesController < ApplicationController
   def index
     @search = params[:search]
+    @search = '' if @search == nil
     @tokens = @search.split
     @results = [ ]
     @tokens.each do |token|
