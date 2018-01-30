@@ -8,7 +8,7 @@ img {
   width: auto;
 }
 
-.comments{ 
+.comments{
   margin-top: 30px;
   padding-top: 100px;
 
@@ -22,8 +22,8 @@ h3 {
   unicode-bidi: bidi-override;
   direction: rtl;
   display: inline-block;
-  
-  
+
+
 }
 .star-rating > span:hover:before,
 .star-rating > span:hover ~ span:before,
@@ -70,13 +70,16 @@ h3 {
   color: orange;
 }
 
+#main{
+  margin-top: 90px;
+  padding-left: 20px;
+}
 
 div.container {
   position: relative;
 }
 
-.center{
-  position: absolute;
+.center {
   left: 0;
   top: 20%;
   width: 100%;
@@ -84,22 +87,59 @@ div.container {
   font-size: 18px;
 }
 
+.center .form-group {
+  text-align: left;
+  font-size: 14px;
+}
+
+.user-links {
+  text-align: left;
+}
 
 div.box {
   width: 200px;
   padding: 40px;
   border: 10px solid #7a7685;
-  margin: auto;  
+  margin: auto;
   box-sizing: content-box;
 }
 
+.errors, .alert{
+    border: 1px solid;
+    margin: 10px 0px;
+    padding: 15px 20px 15px 0px;
+    color: #d9534f;
+    width: 500px;
+    margin: auto;
+    text-align: center;
+}
 
+#error_explanation{
+  border: 1px solid;
+  padding-left: 15px;
+  color: #d9534f;
+  width:500px;
+  margin: auto;
+  text-align: center;
+}
 
+#error_explanation h2{
+  font-size: 15px;
+  text-align: center;
+}
 
+#error_explanation ul{
+  display: inline-block;
+  text-align: left;
 
+}
 
+.users{
+  margin: auto;
+  margin-top: 20px;
+  width: 480px;
 
-
+}
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.

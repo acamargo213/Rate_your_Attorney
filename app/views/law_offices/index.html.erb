@@ -1,23 +1,40 @@
-
-<br><br><br>
+<html>
+    <%= form_tag('/law_offices', method: :get) do %>
+        <h1 style= "font-size:49px; margin-top:60px";"padding-bottom:60px";></h1>
+    <%= text_field_tag :search, nil, size:50, placeholder: "Enter Law Office name, city, or state" %>
+        <input type= "submit" value= "Go"/>
+    <% end %>
+</html>
+<br><br>
 <ul class="list-group">
     <% @results.each do |law_office| %>
+      <% if law_office.ratings.any? %>
         <div class="average_rating-<% %>" data-score= <%= law_office.ratings.average(:stars).round(1) %>></div>
-        
-    
+        <% average = law_office.ratings.average(:stars).round(1) %>
+      <% else %>
+        <% average = nil %>
+      <% end %>
+
         <li class="list-group-item">
-            <%= link_to law_office.name, law_office %>
-            <%= law_office.ratings.average(:stars).round(1) %>
-            <br><%= highlight(law_office.street_address, @search) %>, <%= highlight(law_office.zip, @search) %></br>
-            <%= highlight(law_office.city, @search) %>, <%= highlight(law_office.state, @search) %>
-            
-             
-       
+          <%= link_to law_office.name, law_office %>
+
+          <% if average %>
+            <br><%= render(partial: 'ratings/show_stars', locals: { rating: average }) %>
+          <% else %>
+            <p>No ratings yet</p>
+          <% end %>
+
+          <%= "#{highlight(law_office.street_address, @search)} ," if law_office.street_address.present? %>
+          <%= highlight(law_office.zip, @search) if law_office.zip.present? %>
+          <%= "#{highlight(law_office.city, @search)} ," if law_office.city.present? %>
+          <%= highlight(law_office.state, @search) if law_office.state.present? %>
         </li>
-        
-    
+
+
+
+
+
     <% end %>
-    
      <% if user_signed_in? %>
         <a class="btn btn-primary" href="law_offices/new" role="button">Create New Law Office</a>
      <% end %>

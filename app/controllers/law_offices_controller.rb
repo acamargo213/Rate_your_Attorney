@@ -55,6 +55,7 @@ class LawOfficesController < ApplicationController
        @avg_rating = 0
      else
        @avg_rating = @ratings.average(:stars).round(1)
+
      end
   end
 
